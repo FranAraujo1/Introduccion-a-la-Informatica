@@ -1,0 +1,14 @@
+class Notebook:
+    def __init__(self, precio,marca, modelo):
+        self._marca = marca
+        self._modelo = modelo
+        self._precio = precio
+
+    def precioConDescuento(self, descuento):
+        return self._precio - descuento
+    
+ 
+descuento = int(input("Ingresar el monto de descuento: "))
+
+notebook1 = Notebook(1000,'Apple','2010')
+print(notebook1.precioConDescuento(descuento))
