@@ -14,7 +14,7 @@ print(personas['maximo_grado_academico_id'].value_counts()) # nos devuelve la ca
 print(personas.isnull().sum()) # devuelve cantidad de nulls de una columna
 
 
-print(personas.dropna(inplace=True)) # es por fila 
+print(personas.dropna(inplace=True)) # es por fila  
 
 print(personas.dropna(thresh=2, inplace=True)) # es por fila
 
