@@ -48,6 +48,6 @@ print(datos.drop_duplicates(inplace=True))
 #print(g)
 #plt.show()
 
-f = sns.histplot(data = datos, x = "Sueldo", binwidth=0.25, kde = True, color= 'blue')
+f = sns.histplot(data = datos, x = "Sueldo", binwidth=0.25, kde = True, color= 'orange')
 print(f)
 plt.show()
