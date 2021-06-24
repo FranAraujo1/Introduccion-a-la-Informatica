@@ -25,12 +25,24 @@ print(stock_data.columns)
 
 # CARACTERIZACIÓN
 
+
+# nos devuelve la cantidad de NaN x columna
+
 print(stock_data.isnull().sum())
 print(stock_data.dropna(inplace=True))
 
-f = sns.histplot(data = stock_data, x = "2010-01-04", binwidth=0.25, kde = True, color= 'orange')
+# Más información
+print(stock_data.describe())
+print(stock_data.info())
+
+
+# Rellenamos los 'espacios' de las columnas donde había nulls con la media
+print(stock_data.fillna(stock_data['2010-01-07'].mean(), inplace=True)) 
+print(stock_data.fillna(stock_data['2013-10-23'].mean(), inplace=True))
+
+'''f = sns.histplot(data = stock_data, x = "2010-01-04", binwidth=0.25, kde = True, color= 'orange')
 print(f)
-plt.show()
+plt.show()'''
 
 
 '''k = 14  #definimos la cantidad de clusters
