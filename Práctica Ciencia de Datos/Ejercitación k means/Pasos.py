@@ -1,9 +1,9 @@
 # %matplotlib inline
 import pandas as pd #Pandas para usar dataframes
 import matplotlib.pyplot as plt #Para graficar
-import matplotlib.cm as cm #Para graficar el silhouette
+'''import matplotlib.cm as cm #Para graficar el silhouette'''
 import seaborn as sns #Para graficar
-import numpy as np #Para realizar operaciones númericas con matrices y arrays
+'''import numpy as np #Para realizar operaciones númericas con matrices y arrays
 from sklearn import datasets #sklearn es LA biblioteca de machine learning de python
 from sklearn.cluster import KMeans, DBSCAN #Para usar kmeans
 from sklearn.preprocessing import StandardScaler #Para estandarizar nuestros datos
@@ -13,8 +13,8 @@ from sklearn.metrics import pairwise_distances #Para las distancias a pares
 from scipy.cluster.hierarchy import dendrogram, cophenet, linkage #Para graficar los dendrogramas y calcular el coeficiente cofenetico
 from scipy.cluster import hierarchy #Para graficar los dendrogramas
 from scipy.spatial.distance import pdist #Para calcular la distancia con el coeficiente cofenetico
-#import community as community_louvain #Para louvain
-#import networkx as nx #Para grafos
+import community as community_louvain #Para louvain
+import networkx as nx #Para grafos'''
 
 path = '/Users/frana/Documents/UCEMA Programación/Teoría/Introduccion-a-la-Informatica/dataset_clustering_teorico.csv'
 
@@ -35,14 +35,24 @@ print(stock_data.dropna(inplace=True))
 print(stock_data.describe())
 print(stock_data.info())
 
+# Gráfico
+f = sns.histplot(data = stock_data, x = "2010-01-04", binwidth=0.25, kde = True, color= 'orange')
+print(f)
+#plt.show()
 
 # Rellenamos los 'espacios' de las columnas donde había nulls con la media
 print(stock_data.fillna(stock_data['2010-01-07'].mean(), inplace=True)) 
 print(stock_data.fillna(stock_data['2013-10-23'].mean(), inplace=True))
 
-'''f = sns.histplot(data = stock_data, x = "2010-01-04", binwidth=0.25, kde = True, color= 'orange')
-print(f)
-plt.show()'''
+# Filtramos los valores
+df2 = stock_data.sort_values(by = ["2013-10-29"], ascending = False, ignore_index = True).head(10)
+print(df2)
+
+
+# Normailzar los datos y guardalos en una variable stock_data_normalizado
+
+stock_data_normalizado = 
+
 
 
 '''k = 14  #definimos la cantidad de clusters
